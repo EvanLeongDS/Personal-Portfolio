@@ -40,8 +40,7 @@ export default function SkillsPage() {
               "TypeScript",
               "HTML",
               "Tailwind CSS",
-              "FastAPI",
-              "C"
+              "C",
             ].map((skill) => (
               <span key={skill} className="skill-chip">
                 {skill}
@@ -83,6 +82,8 @@ export default function SkillsPage() {
               "Poetry",
               "Docker",
               "Next.js",
+              "Node.js",
+              "FastAPI",
               "PostgreSQL",
               "MongoDB",
               "Agile",
@@ -92,6 +93,7 @@ export default function SkillsPage() {
               "PowerPoint",
               "Google Drive",
               "Notion",
+              "Slack",
               "Jupyter",
               "Google Colab",
             ].map((skill) => (
