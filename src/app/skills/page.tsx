@@ -12,7 +12,7 @@ export default function SkillsPage() {
           <Link href="/#projects">Projects</Link>
           <Link href="/coursework">Coursework</Link>
           <Link href="/skills">Skills</Link>
-          <Link href="/documents">Resume / Transcript</Link>
+          <a href="https://leongevan.vercel.app/resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
           <Link href="/#contact">Contact</Link>
         </div>
       </nav>

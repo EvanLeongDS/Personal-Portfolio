@@ -44,7 +44,7 @@ export default function Home() {
           <a href="#projects" onClick={(e) => { e.preventDefault(); document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" }); }}>Projects</a>
           <Link href="/coursework">Coursework</Link>
           <Link href="/skills">Skills</Link>
-          <Link href="/documents">Resume / Transcript</Link>
+          <a href="https://leongevan.vercel.app/resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
           <a href="#contact" onClick={(e) => { e.preventDefault(); document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" }); }}>Contact</a>
         </div>
 
