@@ -29,12 +29,10 @@ export default function Nav() {
           Contact
         </Link>
         <Link
-          href="https://leongevan.vercel.app/resume.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
+          href="/documents"
           className="text-sm font-medium text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100"
         >
-          Resume
+          Resume/Transcript
         </Link>
       </div>
     </nav>

@@ -142,7 +142,7 @@ button {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 32px;
+  gap: 12px;
   padding: 120px 20px 60px;
   max-width: 1280px;
   margin: 0 auto;
@@ -151,7 +151,8 @@ button {
 .hero-content {
   position: relative;
   z-index: 2;
-  width: min(100%, 620px);
+  width: min(100%, 580px);
+  flex: 0 0 50%;
 }
 
 .hero-subtitle {
@@ -222,9 +223,11 @@ button {
 
 .spline-wrapper {
   position: relative;
-  width: min(48vw, 680px);
-  height: min(48vw, 680px);
-  flex-shrink: 0;
+  width: min(50vw, 760px);
+  height: clamp(520px, 54vw, 760px);
+  max-height: calc(100vh - 170px);
+  flex: 0 0 50%;
+  margin-left: auto;
 }
 
 .spline-bg {
@@ -246,10 +249,18 @@ button {
 
 .spline-container {
   position: relative;
-  width: 100%;
-  height: 100%;
+  width: 120%;
+  height: 120%;
   z-index: 1;
   opacity: 0.9;
+  transform: translate(-23%, -14%);
+  transform-origin: center;
+}
+
+.spline-container > div,
+.spline-container canvas {
+  width: 100% !important;
+  height: 100% !important;
 }
 
 /* SECTIONS */
@@ -588,11 +599,21 @@ section[id] {
   .hero-content {
     width: 100%;
     max-width: 760px;
+    flex: none;
   }
 
   .spline-wrapper {
     width: min(82vw, 540px);
     height: min(82vw, 540px);
+    max-height: none;
+    flex: none;
+    margin-left: 0;
+  }
+
+  .spline-container {
+    width: 100%;
+    height: 100%;
+    transform: none;
   }
 
   .projects-grid {
