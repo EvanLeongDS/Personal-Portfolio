@@ -221,7 +221,7 @@ export default function Home() {
 
             <div className="experience-content">
               <h3 className="experience-heading">
-                Incoming Vice President |
+                Vice President |
                 <span className="experience-company">BU HackHardware Club</span>
               </h3>
 
@@ -235,9 +235,9 @@ export default function Home() {
                 45 participant Nerf Gun hackathon, contributing to idea
                 formation, funding proposals, documentation, bill of materials,
                 and outreach to enable the event’s launch at scale. Next
-                semester, I will be VP of the club and will continue to be
+                year, as VP of the club, I will continue to be
                 responsible for coordinating events and operations while
-                continuing to apply data science to the hardware world.
+                taking on a bigger project management role for the club. 
               </p>
             </div>
           </div>
