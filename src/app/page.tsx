@@ -247,7 +247,44 @@ export default function Home() {
       <section id="projects" className="section">
         <h2 className="projects-section-title">Projects</h2>
 
+       
         <div className="projects-grid">
+          <a
+            href="https://connect-nil.vercel.app"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="project-card"
+          >
+            <img
+              src="/connect-nil.png"
+              alt="ConnectNIL"
+              className="project-image"
+            />
+
+            <div className="project-body">
+              <h3 className="project-title">ConnectNIL</h3>
+
+              <p className="project-description">
+                Born from Boston University's Entrepeneurship Course (SI 344), ConnectNIL brings together teams and brands that want to create a mutual win-win deal. 
+                The problem with the NIL market is that it is easy for big teams and brands with billions of dollars to come to deal. It's much harder for smaller teams and brands to work through a deal. ConnectNIL solves this problem. 
+                ConnectNIL handles all the complicated logisitics such as user and roster management, contract creation, deliverable tracking, and partnership creation. 
+                All the user has to do is find a team or a brand, and strike up a conversation. ConnectNIL handles the rest.
+              </p>
+
+              <div className="project-tags">
+                <span className="project-tag">TypeScript</span>
+                <span className="project-tag">React</span>
+                <span className="project-tag">Next.js</span>
+                <span className="project-tag">Tailwind CSS</span>
+                <span className="project-tag">Supabase</span>
+                <span className="project-tag">Stripe</span>
+                <span className="project-tag">SQL</span>
+                <span className="project-tag">APIs</span>
+                <span className="project-tag">CI/CD</span>
+              </div>
+            </div>
+          </a>
+
           <a
             href="https://devpost.com/software/deaftones"
             target="_blank"
