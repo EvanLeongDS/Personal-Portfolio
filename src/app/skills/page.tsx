@@ -62,7 +62,6 @@ export default function SkillsPage() {
               "Seaborn",
               "Matplotlib",
               "MapReduce",
-              "Spark",
               "PySpark",
               "OpenAI API",
               "Librosa",
@@ -86,7 +85,8 @@ export default function SkillsPage() {
               "FastAPI",
               "PostgreSQL",
               "MongoDB",
-              "Agile",
+              "AGILE",
+              "CI/CD",
               "LM Studio",
               "Ollama",
               "Excel",
@@ -96,6 +96,9 @@ export default function SkillsPage() {
               "Slack",
               "Jupyter",
               "Google Colab",
+              "Railway",
+              "Vercel",
+              "ReCAPTCHA API",
             ].map((skill) => (
               <span key={skill} className="skill-chip">
                 {skill}
