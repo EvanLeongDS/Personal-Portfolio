@@ -97,6 +97,7 @@ export default function SkillsPage() {
               "Jupyter",
               "Google Colab",
               "Railway",
+              "Supabase",
               "Vercel",
               "ReCAPTCHA API",
             ].map((skill) => (
