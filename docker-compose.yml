@@ -1,0 +1,13 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: personal-portfolio
+    container_name: personal-portfolio
+    # Host port is overridable: PORT=3001 docker compose up
+    ports:
+      - "${PORT:-3000}:3000"
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped

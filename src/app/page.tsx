@@ -3,6 +3,9 @@
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import { useRef, useEffect, useState } from "react";
+import TextType from "@/components/TextType";
+import ShinyText from "@/components/ShinyText";
+import BorderGlow from "@/components/BorderGlow";
 
 const Spline = dynamic(() => import("@splinetool/react-spline"), {
   ssr: false,
@@ -40,6 +43,18 @@ export default function Home() {
   const scrollToSection = (id: string) => {
     setMenuOpen(false);
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  // Shared green border-glow config for the project cards (matches the site's green accent).
+  const projectGlow = {
+    className: "project-glow",
+    glowColor: "142 70 50",
+    colors: ["#86efac", "#22c55e", "#166534"],
+    backgroundColor: "var(--glow-card-bg)",
+    borderRadius: 18,
+    glowRadius: 30,
+    edgeSensitivity: 35,
+    coneSpread: 25,
   };
 
   return (
@@ -84,17 +99,28 @@ export default function Home() {
 
       <section className="hero">
         <div className="hero-content">
-          <p className="hero-subtitle">
-            Boston University | AI/ML &amp; Software Engineer
-          </p>
+          <div className="hero-subtitle">
+            Boston University |{" "}
+            <TextType
+              as="span"
+              text={["AI Researcher", "Software Engineer", "Data Scientist", "Business Analyst"]}
+              typingSpeed={75}
+              pauseDuration={1500}
+              deletingSpeed={40}
+              showCursor={true}
+              cursorCharacter="|"
+            />
+          </div>
 
           <h1 className="hero-title">
-            Evan <br /> Leong
+            <ShinyText text="Evan" color="var(--shiny-base)" shineColor="var(--shiny-shine)" speed={3} />
+            <br />
+            <ShinyText text="Leong" color="var(--shiny-base)" shineColor="var(--shiny-shine)" speed={3} delay={0.4} />
           </h1>
 
           <div className="hero-text-and-icons">
             <p className="hero-description">
-              A sophomore at Boston University exploring AI, machine learning,
+              A student at Boston University exploring AI, machine learning,
               and backend systems.
             </p>
 
@@ -176,16 +202,59 @@ export default function Home() {
 
               <p className="experience-date">January 2026 – Present</p>
 
-              <p className="experience-description">
-                Working to develop PaperBuddy, an AI chatbot and user interface
-                to help students go through a more structured pre-reading process
-                for classes in a more meticulous and critical manner. The overall
-                goal of PaperBuddy is to allow students to develop a deeper
-                understanding of readings for themselves while still having the
-                ability to utilize AI. I am currently testing different LLM
-                models and fine tuning them with prompt engineering to improve
-                the responses from the AI.
-              </p>
+              <ul className="experience-description">
+                <li>
+                  Developing PaperBuddy, an AI chatbot and interface that guides
+                  students through a more structured, critical pre-reading process
+                  for their classes. PaperBuddy intends to replace passive summarization
+                   with active, intentional reading and critical thinking.
+                </li>
+                <li>
+                  I designed the experience through prompt engineering to prevent students from outright summarizing a paper,
+                  teach themselves through counterfactual questions, and guide them through the reading process in a more structured manner.
+                </li>
+                <li>
+                  Currently building the user interface and backend for PaperBuddy using Python, React, and Django, and I
+                  added an analytics dashboard to track student engagement, LLM performance, and reading progress.
+                  Worked on quality of life features such as the ability for both the LLM and student to properly highlight on a PDF 
+                  and RAG pipelines for PaperBuddy to use for better responses.
+                </li>
+                <li>
+                  Engineered CI/CD pipelines using Github Actions, Playwright, and Docker to automate testing and deployment. 
+                  PaperBuddy is on track to be deployed in a graduate privacy and security course at BU by Fall 2026.
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="experience-item">
+            <div className="experience-logo">
+              <img src="/ngx.png" alt="NGX Ventures" />
+            </div>
+
+            <div className="experience-content">
+              <h3 className="experience-heading">
+                Backend Software Engineer |
+                <span className="experience-company">NGX Ventures</span>
+              </h3>
+
+              <p className="experience-date">February 2026 – June 2026</p>
+
+              <ul className="experience-description">
+                <li>
+                  Constructed a real-time dynamic pricing engine using Node.js and
+                  TypeScript that computes dataset prices from 10 weighted signals,
+                  fed by 15 background workers ingesting external feeds (SEC EDGAR,
+                  NOAA, GDELT).
+                </li>
+                <li>
+                  Integrated an LLM judge to classify events into impact scores,
+                  triggering repricing when multiple feeds agree. 
+                  Engineered the payments and access-control layer, integrating Stripe Connect marketplace settlement
+                   (88/12 standard, 85/15 surge revenue splits) and scoped 
+                   expiring API-key authentication for secure transactions.
+                </li>
+              </ul>
             </div>
           </div>
 
@@ -202,15 +271,21 @@ export default function Home() {
 
               <p className="experience-date">June 2025 – Aug 2025</p>
 
-              <p className="experience-description">
-                Conducted ML benchmarking tests for QWEN and Med Gemma LLMs to
-                determine base model for SkinGPT mini, a faster and more
-                efficient version of Quantum Aesthetics&apos; SkinGPT. Utilized
-                Python, Pydantic AI, Pillow, and OpenAI API along with fine
-                tuning and prompt engineering to test the two LLMS on image
-                classification, visual questioning answering, bounding boxes, and
-                hallucination rates.
-              </p>
+              <ul className="experience-description">
+                <li>
+                  Conducted ML benchmarking tests for the QWEN and Med Gemma LLMs
+                  to select the base model for SkinGPT mini, a faster and more
+                  efficient version of Quantum Aesthetics&apos; SkinGPT.
+                </li>
+                <li>
+                  Used Python, Pydantic AI, Pillow, and the OpenAI API with fine
+                  tuning and prompt engineering to run the evaluations.
+                </li>
+                <li>
+                  Compared the two LLMs on image classification, visual question
+                  answering, bounding boxes, and hallucination rates.
+                </li>
+              </ul>
             </div>
           </div>
 
@@ -227,18 +302,23 @@ export default function Home() {
 
               <p className="experience-date">March 2025 – Present</p>
 
-              <p className="experience-description">
-                This past year, I supported club operations by helping coordinate
-                meetings and events, drafting external sponsorship emails and
-                marketing designs, and contributing to logistics for a robotics
-                hackathon of 50 participants. I also planned and co-developed a
-                45 participant Nerf Gun hackathon, contributing to idea
-                formation, funding proposals, documentation, bill of materials,
-                and outreach to enable the event’s launch at scale. Next
-                year, as VP of the club, I will continue to be
-                responsible for coordinating events and operations while
-                taking on a bigger project management role for the club. 
-              </p>
+              <ul className="experience-description">
+                <li>
+                  Supported club operations by coordinating meetings and events,
+                  drafting sponsorship emails and marketing designs, and handling
+                  logistics for a 50-participant robotics hackathon.
+                </li>
+                <li>
+                  Planned and co-developed a 45-participant Nerf Gun hackathon,
+                  contributing to idea formation, funding proposals, documentation,
+                  bill of materials, and outreach to launch the event at scale.
+                </li>
+                <li>
+                  As Vice President, I coordinate events and operations while taking
+                  on a larger project management role as the eboard prepares for a
+                  40-participant cybersecurity hackathon.
+                </li>
+              </ul>
             </div>
           </div>
         </div>
@@ -249,6 +329,7 @@ export default function Home() {
 
        
         <div className="projects-grid">
+          <BorderGlow {...projectGlow}>
           <a
             href="https://connect-nil.vercel.app"
             target="_blank"
@@ -284,7 +365,9 @@ export default function Home() {
               </div>
             </div>
           </a>
+          </BorderGlow>
 
+          <BorderGlow {...projectGlow}>
           <a
             href="https://devpost.com/software/deaftones"
             target="_blank"
@@ -319,7 +402,9 @@ export default function Home() {
               </div>
             </div>
           </a>
+          </BorderGlow>
 
+          <BorderGlow {...projectGlow}>
           <a
             href="https://github.com/EvanLeongDS/DS210-Final-Project-"
             target="_blank"
@@ -349,6 +434,7 @@ export default function Home() {
               </div>
             </div>
           </a>
+          </BorderGlow>
         </div>
       </section>
 

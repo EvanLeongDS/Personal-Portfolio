@@ -47,6 +47,9 @@ button {
   --card-border: rgba(255, 255, 255, 0.08);
   --nav-link: #f3f4f6;
   --chip-border: rgba(255, 255, 255, 0.15);
+  --shiny-base: #c2c8d2;
+  --shiny-shine: #ffffff;
+  --glow-card-bg: #0c110e;
 }
 
 [data-theme="light"] {
@@ -61,6 +64,9 @@ button {
   --card-border: rgba(0, 0, 0, 0.08);
   --nav-link: #334155;
   --chip-border: rgba(0, 0, 0, 0.15);
+  --shiny-base: #334155;
+  --shiny-shine: #94a3b8;
+  --glow-card-bg: #eef3f0;
 }
 
 .theme-bg {
@@ -158,7 +164,7 @@ button {
 .hero-subtitle {
   margin: 0 0 12px;
   color: var(--text-muted);
-  font-size: 0.95rem;
+  font-size: 1.15rem;
 }
 
 .hero-title {
@@ -167,6 +173,13 @@ button {
   line-height: 0.95;
   letter-spacing: -0.04em;
   font-weight: 800;
+}
+
+/* Shine spans clip their gradient to the text box; give descenders (e.g. the
+   "g" in Leong) vertical room so they aren't cut off by the tight line-height. */
+.hero-title .shiny-text {
+  line-height: 1.15;
+  padding-bottom: 0.12em;
 }
 
 .hero-text-and-icons {
@@ -373,9 +386,19 @@ section[id] {
 
 .experience-description {
   margin: 10px 0 0;
+  padding-left: 1.25em;
   color: var(--text-secondary);
   line-height: 1.75;
   max-width: 760px;
+  list-style: disc;
+}
+
+.experience-description li {
+  margin: 4px 0;
+}
+
+.experience-description li::marker {
+  color: var(--text-secondary);
 }
 
 /* PROJECTS */
@@ -399,6 +422,28 @@ section[id] {
 .project-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 14px 36px rgba(0, 0, 0, 0.22);
+}
+
+/* Project cards wrapped in BorderGlow: let the glow wrapper own the frame
+   (background, border, radius, hover lift) so we don't double up. */
+.project-glow {
+  transition: transform 0.2s ease;
+}
+
+.project-glow:hover {
+  transform: translateY(-6px);
+}
+
+.project-glow .project-card {
+  height: 100%;
+  background: transparent;
+  border: none;
+  color: var(--text);
+}
+
+.project-glow .project-card:hover {
+  transform: none;
+  box-shadow: none;
 }
 
 .project-image {
@@ -680,7 +725,7 @@ section[id] {
   }
 
   .hero-subtitle {
-    font-size: 0.88rem;
+    font-size: 1rem;
   }
 
   .hero-description {
