@@ -30,16 +30,13 @@ export default function SkillsPage() {
               "Python",
               "PySpark",
               "SQL",
-              "Flask",
               "Rust",
               "Bash",
               "Git",
               "NoSQL",
               "R",
-              "React",
               "TypeScript",
               "HTML",
-              "Tailwind CSS",
               "C",
             ].map((skill) => (
               <span key={skill} className="skill-chip">
@@ -65,6 +62,26 @@ export default function SkillsPage() {
               "PySpark",
               "OpenAI API",
               "Librosa",
+              "LangChain",
+            ].map((skill) => (
+              <span key={skill} className="skill-chip">
+                {skill}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        <div className="coursework-block">
+          <h2 className="subsection-title">Frameworks</h2>
+          <div className="skills-grid">
+            {[
+              "React",
+              "Next.js",
+              "Django",
+              "FastAPI",
+              "Flask",
+              "Node.js",
+              "Tailwind CSS",
             ].map((skill) => (
               <span key={skill} className="skill-chip">
                 {skill}
@@ -80,9 +97,6 @@ export default function SkillsPage() {
               "GitHub",
               "Poetry",
               "Docker",
-              "Next.js",
-              "Node.js",
-              "FastAPI",
               "PostgreSQL",
               "MongoDB",
               "AGILE",
