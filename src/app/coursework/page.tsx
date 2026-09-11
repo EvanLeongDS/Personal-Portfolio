@@ -27,6 +27,8 @@ export default function CourseworkPage() {
           <h2 className="subsection-title">Data Science</h2>
           <div className="skills-grid">
             {[
+              { name: "Graduate Algorithmic Game Theory", url: "https://www.bu.edu/academics/cds/courses/cds-ds-574/" },
+              { name: "Intro to ML/AI", url: "https://www.bu.edu/academics/cds/courses/cds-ds-340/" },
               { name: "Algorithms", url: "https://www.bu.edu/academics/cds/courses/cds-ds-320/" },
               { name: "Data Structures & Rust", url: "https://www.bu.edu/academics/cds/courses/cds-ds-210/" },
               { name: "Machine Learning for Business Analytics", url: "https://www.bu.edu/academics/questrom/courses/qst-ba-576/" },
@@ -35,6 +37,8 @@ export default function CourseworkPage() {
               { name: "Applied Statistics", url: "https://www.bu.edu/academics/cas/courses/cas-ma-214/" },
               { name: "Computational Linear Algebra", url: "https://www.bu.edu/academics/cds/courses/cds-ds-121/" },
               { name: "Discrete Math", url: "https://www.bu.edu/academics/cds/courses/cds-ds-120/" },
+              { name: "Data Ethics", url: "https://www.bu.edu/academics/cds/courses/cds-ds-380/" },
+              { name: "Product Management", url: "https://www.bu.edu/academics/cds/courses/cds-ds-229/" },
               { name: "Spark! Software Engineering Prep Workshop", url: "https://www.bu.edu/academics/cds/courses/cds-ds-219/" },
             ].map((course) => (
               <a key={course.name} href={course.url} target="_blank" rel="noopener noreferrer" className="skill-chip">
