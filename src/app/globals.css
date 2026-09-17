@@ -47,8 +47,8 @@ button {
   --card-border: rgba(255, 255, 255, 0.08);
   --nav-link: #f3f4f6;
   --chip-border: rgba(255, 255, 255, 0.15);
-  --shiny-base: #c2c8d2;
-  --shiny-shine: #ffffff;
+  --shiny-base: #ffffff;
+  --shiny-shine: #c2c8d2;
   --glow-card-bg: #0c110e;
 }
 

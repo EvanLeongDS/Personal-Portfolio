@@ -369,6 +369,53 @@ export default function Home() {
 
           <BorderGlow {...projectGlow}>
           <a
+            href="https://github.com/EvanLeongDS/ML-for-Business-Analytics-Project"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="project-card"
+          >
+            <img
+              src="/fantasy-football.png"
+              alt="ML Fantasy Football Projections"
+              className="project-image"
+            />
+
+            <div className="project-body">
+              <h3 className="project-title">
+                ML Fantasy Football Projections
+              </h3>
+
+              <p className="project-description">
+                For a semester-long project in Boston University's Business
+                Analytics course (BA 576), I conducted exploratory data analysis
+                on weekly NFL player data and built three iterations of random
+                forests, along with ridge regressions, XGBoost, and LightGBM
+                models, to find which historical features best predict a
+                player's fantasy points going forward. I validated each model
+                with K-fold cross validation and hyperparameter tuning, then
+                trained a 50-epoch neural network in PyTorch on the strongest
+                features. Total yards, total touchdowns, and their rolling
+                averages carried most of the predictive signal, and the final
+                six-feature model reached a 0.92 test R-squared with almost no
+                overfitting gap.
+              </p>
+
+              <div className="project-tags">
+                <span className="project-tag">Python</span>
+                <span className="project-tag">Machine Learning</span>
+                <span className="project-tag">PyTorch</span>
+                <span className="project-tag">scikit-learn</span>
+                <span className="project-tag">XGBoost</span>
+                <span className="project-tag">LightGBM</span>
+                <span className="project-tag">pandas</span>
+                <span className="project-tag">Feature Engineering</span>
+              </div>
+            </div>
+          </a>
+          </BorderGlow>
+
+          <BorderGlow {...projectGlow}>
+          <a
             href="https://devpost.com/software/deaftones"
             target="_blank"
             rel="noopener noreferrer"
