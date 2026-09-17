@@ -48,7 +48,9 @@ button {
   --nav-link: #f3f4f6;
   --chip-border: rgba(255, 255, 255, 0.15);
   --shiny-base: #ffffff;
-  --shiny-shine: #c2c8d2;
+  --shiny-shine: #c7f9dd;
+  --hero-glow: drop-shadow(0 0 22px rgba(255, 255, 255, 0.32))
+    drop-shadow(0 0 55px rgba(134, 239, 172, 0.2));
   --glow-card-bg: #0c110e;
 }
 
@@ -64,8 +66,9 @@ button {
   --card-border: rgba(0, 0, 0, 0.08);
   --nav-link: #334155;
   --chip-border: rgba(0, 0, 0, 0.15);
-  --shiny-base: #334155;
-  --shiny-shine: #94a3b8;
+  --shiny-base: #0f172a;
+  --shiny-shine: #4ca97c;
+  --hero-glow: drop-shadow(0 1px 10px rgba(15, 23, 42, 0.16));
   --glow-card-bg: #eef3f0;
 }
 
@@ -173,6 +176,7 @@ button {
   line-height: 0.95;
   letter-spacing: -0.04em;
   font-weight: 800;
+  filter: var(--hero-glow);
 }
 
 /* Shine spans clip their gradient to the text box; give descenders (e.g. the
